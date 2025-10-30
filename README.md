@@ -1,73 +1,185 @@
-# Welcome to your Lovable project
+# EADF – El Abogado del Freelancer
 
-## Project info
+Landing page profesional para servicios legales dirigidos a freelancers y empresas LATAM que trabajan con clientes de Estados Unidos.
 
-**URL**: https://lovable.dev/projects/0759e108-b28d-4f7c-a0c8-c43f17984e93
+## 🚀 Características
 
-## How can I edit this code?
+- **Diseño minimalista y profesional** con paleta verde corporativa
+- **Totalmente responsivo** (mobile-first)
+- **SEO optimizado** con meta tags, Open Graph y Schema.org
+- **Accesibilidad WCAG AA**
+- **Animaciones suaves** y transiciones elegantes
+- **Formulario de contacto** con validación
+- **Integración WhatsApp** (botón flotante + enlaces directos)
+- **9 secciones completas**: Hero, Servicios, Planes, Proceso, Testimonios, FAQ, Contacto, Footer
 
-There are several ways of editing your application.
+## 📋 Secciones
 
-**Use Lovable**
+1. **Header/Navbar** - Navegación sticky con enlaces suaves
+2. **Hero** - Titular impactante + CTA + badges de confianza
+3. **Servicios** - 4 cards de servicios principales
+4. **Planes** - 3 opciones de pricing (Kit START, Suscripción, Kit PRO)
+5. **Cómo Funciona** - 4 pasos del proceso
+6. **Testimonios** - 3 casos de éxito
+7. **FAQ** - 8 preguntas frecuentes en acordeón
+8. **Contacto** - Formulario + WhatsApp + redes sociales
+9. **Footer** - Información legal + disclaimer
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0759e108-b28d-4f7c-a0c8-c43f17984e93) and start prompting.
+## 🛠️ Stack Tecnológico
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React 18** + **TypeScript**
+- **Vite** (build tool)
+- **Tailwind CSS** (styling)
+- **shadcn/ui** (componentes)
+- **Lucide React** (iconos)
+- **React Router** (navegación)
 
-**Use your preferred IDE**
+## 📦 Instalación y Desarrollo
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Requisitos previos
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js 16+ y npm
 
-Follow these steps:
+### Pasos
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+# Clonar el repositorio
+git clone <tu-repo-url>
+cd <nombre-proyecto>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Instalar dependencias
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Iniciar servidor de desarrollo
 npm run dev
+
+# El proyecto estará disponible en http://localhost:8080
 ```
 
-**Edit a file directly in GitHub**
+## 🏗️ Build para Producción
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+# Crear build optimizado
+npm run build
 
-**Use GitHub Codespaces**
+# El build estará en la carpeta /dist
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🚀 Deploy en Vercel
 
-## What technologies are used for this project?
+### Opción 1: Deploy desde GitHub
 
-This project is built with:
+1. Subí tu código a GitHub
+2. Conectá tu repositorio en [Vercel](https://vercel.com)
+3. Vercel detectará automáticamente Vite
+4. Click en "Deploy"
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Opción 2: Deploy con Vercel CLI
 
-## How can I deploy this project?
+```bash
+# Instalar Vercel CLI
+npm i -g vercel
 
-Simply open [Lovable](https://lovable.dev/projects/0759e108-b28d-4f7c-a0c8-c43f17984e93) and click on Share -> Publish.
+# Deploy
+vercel
 
-## Can I connect a custom domain to my Lovable project?
+# Deploy a producción
+vercel --prod
+```
 
-Yes, you can!
+### Configuración recomendada en Vercel
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+- **Install Command**: `npm install`
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 🎨 Sistema de Diseño
+
+### Paleta de Colores
+
+- **Primary (Verde oscuro)**: `#0F3D2E` - HSL(162, 61%, 15%)
+- **Secondary (Gris)**: `#6B7280` - HSL(220, 9%, 46%)
+- **Background**: Blanco `#FFFFFF`
+- **Accent**: Verde medio para hover/focus
+
+### Tipografía
+
+- **Fuente principal**: Inter (Google Fonts)
+- **Pesos**: 300, 400, 500, 600, 700, 800
+
+### Componentes
+
+Todos los componentes usan el sistema de diseño definido en:
+- `src/index.css` - Variables CSS y tokens semánticos
+- `tailwind.config.ts` - Configuración de Tailwind
+
+## 📱 Configuración de WhatsApp
+
+Para personalizar el número de WhatsApp:
+
+1. Abrí `src/components/Navbar.tsx`
+2. Abrí `src/components/Hero.tsx`
+3. Abrí `src/components/FloatingWhatsApp.tsx`
+4. Buscá `whatsappLink` y reemplazá `1234567890` con tu número (formato internacional sin +)
+
+Ejemplo: `https://wa.me/5491123456789?text=Tu%20mensaje`
+
+## 🔧 Personalización
+
+### Cambiar colores
+
+Editá las variables CSS en `src/index.css`:
+
+```css
+:root {
+  --primary: 162 61% 15%;  /* Tu color primario en HSL */
+  --secondary: 220 9% 46%; /* Tu color secundario */
+  /* ... */
+}
+```
+
+### Modificar contenido
+
+- **Textos y copys**: Editá cada componente en `src/components/`
+- **Planes de pricing**: `src/components/Pricing.tsx`
+- **FAQs**: `src/components/FAQ.tsx`
+- **Testimonios**: `src/components/Testimonials.tsx`
+
+### Cambiar imagen hero
+
+Reemplazá `src/assets/hero-legal.jpg` con tu imagen o generá una nueva.
+
+## 📊 SEO
+
+El sitio incluye:
+
+- ✅ Title y meta description optimizados
+- ✅ Open Graph tags (Facebook, LinkedIn)
+- ✅ Twitter Cards
+- ✅ Keywords relevantes
+- ✅ Semantic HTML (header, main, section, footer)
+- ✅ Alt text en imágenes
+- ✅ robots.txt configurado
+
+Para mejorar SEO:
+
+1. Actualizá meta tags en `index.html`
+2. Agregá Schema.org JSON-LD para Organization y FAQPage
+3. Configurá Google Analytics/Search Console después del deploy
+
+## 📄 Licencia
+
+Todos los derechos reservados © EADF 2025
+
+## 🤝 Soporte
+
+Para consultas o soporte, contactá a través de:
+
+- **Email**: contacto@eadf.com
+- **WhatsApp**: [Configurar número]
+- **Website**: https://elabogadodelfreelancer.com
+
+---
+
+**Desarrollado por**: EADF
+**Última actualización**: 2025
